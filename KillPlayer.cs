@@ -7,9 +7,10 @@ public class KillPlayer : MonoBehaviour
     public GameObject player; // this is you!
     public Transform respawnPoint;
     public ScoreText logic; // ui
+    public Upgrades upgrades;
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ScoreText>(); // get the score text ui
+        logic = GameObject.FindGameObjectWithTag("scoreCanvas").GetComponent<ScoreText>(); // get the score text ui
     }
 
     // Update is called once per frame
@@ -22,7 +23,6 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) // find the player object
         {
-            player.transform.position = respawnPoint.position; // kill the player, again moving it is easier than destroy and recreate
             logic.resetScore(); // reset your score on death
         }
     }

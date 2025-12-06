@@ -1,3 +1,4 @@
+using System.Net;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -10,7 +11,13 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject); // destroy on collision
+        if (collision.gameObject.CompareTag("bullet")) {
+            return;
+        }
+        else
+        {
+            Destroy(gameObject); // destroy on collision
+        }
     }
     private void FixedUpdate()
     {

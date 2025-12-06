@@ -4,6 +4,16 @@ public class beginGame : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene("SampleScene"); //load the main scene, it's called samplescene because I never bothered to name it
+        SceneManager.LoadScene("ZoneOne"); // load level 1
+    }
+
+    public void goToShop()
+    {
+        SceneManager.LoadScene("Shop"); // load the shop
+    }
+
+    public void goToMenu()
+    {
+        SceneManager.LoadScene("Main Menu"); // load main menu
     }
 }
